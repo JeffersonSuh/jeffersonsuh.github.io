@@ -330,3 +330,66 @@ canvas {
     height: auto;
     display: inline-block;
 }
+
+.writing-content {
+    max-width: 1800px;
+    margin: 4rem auto;
+    padding: 0 8rem;
+    text-align: center;
+}
+
+.writing-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.korean-text {
+    max-width: 1800px;
+    margin: 4rem auto;
+    padding: 0 8rem;
+    text-align: center;
+}
+
+.korean-text p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 3rem;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+.side-by-side {
+    max-width: 1800px;
+    margin: 1rem auto;
+    padding: 0 8rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.home-image {
+    margin: 0;
+    padding: 0;
+}
+
+.korean-text {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.korean-text p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 3rem;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+.center-image {
+    max-width: 1800px;
+    margin: 0.5rem auto 1rem auto;
+    padding: 0 8rem;
+    text-align: right;
+}
