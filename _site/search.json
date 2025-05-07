@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "about",
+    "section": "",
+    "text": "test. this is the about page. about."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jefferson Suh",
+    "section": "",
+    "text": "I’m a writer, researcher, and music person exploring the intersections of sound, maths, and culture. This site is a scrapbook of code, audio, and thoughts.\n\n\nSample Work\n\n  Your browser does not support the audio element. \n\n\n\n©  Jefferson Suh / Los Angeles"
+  },
+  {
+    "objectID": "writing.html",
+    "href": "writing.html",
+    "title": "writing",
+    "section": "",
+    "text": "&lt;!DOCTYPE html PUBLIC “-//W3C//DTD HTML 4.01//EN” “http://www.w3.org/TR/html4/strict.dtd”&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n&lt;!– navbar.html –&gt;\n\n\n\n&lt;a href=\"index.html\"&gt;Jefferson Suh&lt;/a&gt;\n\n\n&lt;a href=\"about.html\"&gt;about&lt;/a&gt;\n&lt;a href=\"writing.html\"&gt;writing&lt;/a&gt;\n&lt;a href=\"contact.html\"&gt;contact&lt;/a&gt;\n\n\n\n\nwriting. writing. writing. writing."
+  }
+]

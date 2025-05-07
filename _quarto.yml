@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: "Jefferson Suh"
+  navbar:
+    background: none
+    search: false
+    left:
+      - text: writing
+        href: writing.html
+      - text: about
+        href: about.html
+      - text: contact
+        href: contact.html
+  page-footer:
+    right: |
+      © 2024 Jefferson Suh / Los Angeles
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    page-layout: full
+    mainfont: "Times New Roman"
