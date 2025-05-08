@@ -11,11 +11,13 @@ website:
         href: writing.html
       - text: about
         href: about.html
+      - text: links
+        href: links.html
       - text: contact
         href: contact.html
   page-footer:
     right: |
-      © 2024 Jefferson Suh / Los Angeles
+      © 2025 Jefferson Suh / Los Angeles
 
 format:
   html:
