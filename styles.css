@@ -42,7 +42,6 @@ body {
   margin: 4rem auto;
   max-width: 1100px;
   padding: 0 1rem;
-  min-height: 200vh;
   overflow-x: hidden;
 }
 
@@ -92,18 +91,11 @@ audio {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2rem;
-  left: 44%;
-  transform: translateX(-50%);
+  margin: 4rem auto 0rem auto;
+  padding: 0rem;
   font-family: 'Times New Roman', Times, serif;
-  margin-top: 4rem;
   font-size: .7em;
   color: #666;
   text-align: right;
@@ -380,7 +372,7 @@ canvas {
 }
 
 .korean-text {
-    margin: 0 0 0 8rem;
+    margin: 0 0 0 16rem;
     padding: 0;
     flex: 1;
     text-align: center;

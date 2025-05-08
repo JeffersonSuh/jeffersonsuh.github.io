@@ -21,7 +21,7 @@
         </div>
         <div class="side-by-side">
             <div class="redbow-images">
-                <img src="images/redbow_transp.png" alt="redbow" class="static-image">
+                <img src="images/redbow_transp.png" alt="redbow" class="draggable free-drag">
                 <img src="images/redbow_transp.png" alt="redbow" class="draggable free-drag">
                 <img src="images/redbow_transp.png" alt="redbow" class="draggable free-drag">
                 <img src="images/redbow_transp.png" alt="redbow" class="draggable free-drag">
@@ -42,7 +42,7 @@
         <div class="time-location">
             <div id="location">loading location...</div>
             <div id="date"></div>
-            <div id="clock">local time <span id="time">15:49:01</span></div>
+            <div id="clock"><span id="time">15:49:01</span></div>
         </div>
         <div class="text-content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -136,7 +136,6 @@
                     function(position) {
                         const latitude = position.coords.latitude;
                         const longitude = position.coords.longitude;
-                        
                         // Log raw position data
                         console.log('Raw position data:', position);
                         // Use a more reliable geocoding service
@@ -153,28 +152,13 @@
                             })
                             .catch(error => {
                                 console.error('Geocoding error:', error);
-                                document.getElementById('location').textContent = 'Geocoding failed: ' + error.message;
+                                document.getElementById('location').textContent = 'Earth';
                             });
                     },
                     // Error callback
                     function(error) {
                         console.error('geolocation error:', error);
-                        let errorMessage;
-                        switch(error.code) {
-                            case error.PERMISSION_DENIED:
-                                errorMessage = 'location permission denied';
-                                break;
-                            case error.POSITION_UNAVAILABLE:
-                                errorMessage = 'location information unavailable';
-                                break;
-                            case error.TIMEOUT:
-                                errorMessage = 'location request timed out';
-                                break;
-                            default:
-                                errorMessage = 'unknown error';
-                                break;
-                        }
-                        document.getElementById('location').textContent = errorMessage;
+                        document.getElementById('location').textContent = 'Earth';
                     },
                     // Options
                     {
@@ -183,6 +167,8 @@
                         maximumAge: 0
                     }
                 );
+            } else {
+                document.getElementById('location').textContent = 'Earth';
             }
         }
         // Get location when page loads
