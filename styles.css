@@ -285,11 +285,11 @@ canvas {
 
 .redbow-images .draggable {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 77px;
   height: auto;
   z-index: 2;
-  /* Remove the fixed top/left positioning to allow natural stacking */
-  transform: translate(0, 0);
 }
 
 .contact-form {
