@@ -42,6 +42,8 @@ body {
   margin: 4rem auto;
   max-width: 1100px;
   padding: 0 1rem;
+  min-height: 200vh;
+  overflow-x: hidden;
 }
 
 @keyframes fadeIn {
@@ -98,7 +100,6 @@ footer {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  /* Match the nav-container's structure */
   left: 44%;
   transform: translateX(-50%);
   font-family: 'Times New Roman', Times, serif;
@@ -255,30 +256,40 @@ canvas {
 .about-text p {
     margin-bottom: 1.5rem;
     line-height: 1.6;
-    font-size: 0.89rem;
+    font-size: 1rem;
 }
 
 .email-link {
     color: black;
     text-decoration: none;
-    font-size: 0.89rem;
+    font-size: 1rem;
 }
 
 .email-link:hover {
     text-decoration: none;
 }
 
-.home-image {
-    max-width: 1600px;
-    margin: 4rem auto;
-    padding: 0 8rem;
+.redbow-images {
+  margin: -100px 0 0 -80px;
+  padding: 0;
+  position: relative;
+  min-height: 0px;
 }
 
-.home-image img {
-    width: 77px;  /* Adjust this value to make image larger/smaller */
-    height: auto;
-    display: block;
-    margin-left: 0; /* ALL THE WAY LEFT */
+.static-image {
+  width: 0px;
+  height: auto;
+  display: block;
+  margin-left: 0;
+}
+
+.redbow-images .draggable {
+  position: absolute;
+  width: 77px;
+  height: auto;
+  z-index: 2;
+  /* Remove the fixed top/left positioning to allow natural stacking */
+  transform: translate(0, 0);
 }
 
 .contact-form {
@@ -318,14 +329,39 @@ canvas {
 }
 
 .center-image {
-    max-width: 1600px;
-    margin: 4rem auto;
-    padding: 0 8rem;
+    max-width: 1800px;
+    margin: 0.5rem auto 1rem auto;
+    padding: 0 0 0 0rem;
     text-align: right;
 }
 
 .center-image img {
     width: 100px;  /* Adjust this value to make APPLE ALIEN smaller/larger */
+    height: auto;
+    display: inline-block;
+}
+
+.smile-image {
+    margin-left: 1242px;
+    margin-top: 200px;
+    z-index: 1;
+}
+
+.smile-image img {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+.gradient-image {
+    max-width: 1800px;
+    margin: 0.5rem auto 1rem -120px;
+    padding: 0 0 0 0rem;
+    text-align: left;
+}
+
+.gradient-image img {
+    width: 120px;  /* Adjust this value to make gradient image SIZE */
     height: auto;
     display: inline-block;
 }
@@ -340,13 +376,13 @@ canvas {
 .writing-content p {
     margin-bottom: 1.5rem;
     line-height: 1.6;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .korean-text {
-    max-width: 1800px;
-    margin: 4rem auto;
-    padding: 0 8rem;
+    margin: 0 0 0 8rem;
+    padding: 0;
+    flex: 1;
     text-align: center;
 }
 
@@ -355,6 +391,26 @@ canvas {
     font-size: 3rem;
     line-height: 1.6;
     font-weight: 700;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.text-content {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    padding: 0 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    z-index: 1;
+}
+
+.text-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
 }
 
 .side-by-side {
@@ -367,28 +423,78 @@ canvas {
     justify-content: space-between;
 }
 
-.home-image {
-    margin: 0;
-    padding: 0;
+.draggable {
+    cursor: move;
+    user-select: none;
+    touch-action: none;
+    z-index: 1;
 }
 
-.korean-text {
-    margin: 0;
-    padding: 0;
-    flex: 1;
-    text-align: center;
+.draggable:active {
+    cursor: grabbing;
 }
 
-.korean-text p {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 3rem;
-    line-height: 1.6;
-    font-weight: 700;
+.free-drag {
+    z-index: 1000;
+    cursor: move;
+    user-select: none;
+    touch-action: none;
+    pointer-events: auto;
 }
 
-.center-image {
-    max-width: 1800px;
-    margin: 0.5rem auto 1rem auto;
-    padding: 0 8rem;
+.free-drag:active {
+    cursor: grabbing;
+}
+
+.content {
+    position: relative;
+}
+
+.time-location {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.8rem;
+    color: #111;
     text-align: right;
+    z-index: 1000;
+}
+
+.time-location div {
+    margin-bottom: 0.2rem;
+}
+
+.audio-player {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 1;
+    cursor: move;
+}
+
+.audio-player audio {
+    width: 100%;
+    height: 40px;
+    pointer-events: auto;
+}
+
+.image-series {
+    max-width: 100%;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.series-image {
+    height: 250px;
+    width: auto;
+    max-width: 100%;
+    display: block;
 }
